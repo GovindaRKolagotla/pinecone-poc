@@ -8,4 +8,4 @@ constants_manager = ConstantsManagement()
 pc = Pinecone(api_key=constants_manager.api_key)
 
 index_name = constants_manager.index_name
-pc.delete_index(index_name)
+# pc.delete_index(index_name)
