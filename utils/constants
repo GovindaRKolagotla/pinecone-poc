@@ -1,0 +1,18 @@
+class APIKEYS:
+    api_key='969e6937-100d-42fb-a02c-e9c80a4d84fa'
+
+class INDEXS:
+    index_name = "docs-quickstart-index"
+    
+# ConstantsManagement class
+class ConstantsManagement:
+    def __init__(self):
+        # Set constants from separate classes as attributes
+        for cls in [APIKEYS, INDEXS]:
+            for key, value in cls.__dict__.items():
+                if not key.startswith("__"):
+                    self.__dict__.update(**{key: value})
+
+    def __setattr__(self, name, value):
+        raise TypeError("Constants are immutable")
+    
